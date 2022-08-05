@@ -3,6 +3,10 @@ import { useRef } from "react";
 import "./register.css";
 import { useHistory } from "react-router";
 
+// API call
+import GetRegionsAPI from "./GetAPI/GetRegionsAPI";
+import getApiValue from "./GetAPI/getApiValue";
+
 export default function Register() {
   const firstName = useRef();
   const middleName = useRef();
@@ -23,7 +27,7 @@ export default function Register() {
         username: username.current.value,
         email: email.current.value,
         password: password.current.value,
-        mobile: password.current.value,
+        mobile: mobile.current.value,
       };
       try {
         await axios.post("/auth/register", user);
@@ -46,7 +50,8 @@ export default function Register() {
         {/* <GetRegionsAPI/> */}
         <div className="loginRight">
           <form className="loginBox" onSubmit={handleClick}>
-          <input
+            <GetRegionsAPI />
+            <input
               placeholder="First Name"
               required
               ref={firstName}
