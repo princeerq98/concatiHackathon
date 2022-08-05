@@ -4,8 +4,12 @@ import "./register.css";
 import { useHistory } from "react-router";
 
 export default function Register() {
+  const firstName = useRef();
+  const middleName = useRef();
+  const lastName = useRef();
   const username = useRef();
   const email = useRef();
+  const mobile = useRef();
   const password = useRef();
   const passwordAgain = useRef();
   const history = useHistory();
@@ -19,6 +23,7 @@ export default function Register() {
         username: username.current.value,
         email: email.current.value,
         password: password.current.value,
+        mobile: password.current.value,
       };
       try {
         await axios.post("/auth/register", user);
@@ -33,13 +38,31 @@ export default function Register() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">Lamasocial</h3>
+          <h3 className="loginLogo">SocialPH</h3>
           <span className="loginDesc">
-            Connect with friends and the world around you on Lamasocial.
+            Connect with your family and friends in the Philippines
           </span>
         </div>
+        {/* <GetRegionsAPI/> */}
         <div className="loginRight">
           <form className="loginBox" onSubmit={handleClick}>
+          <input
+              placeholder="First Name"
+              required
+              ref={firstName}
+              className="loginInput"
+            />
+            <input
+              placeholder="Middle Name"
+              ref={middleName}
+              className="loginInput"
+            />
+            <input
+              placeholder="Last Name"
+              required
+              ref={lastName}
+              className="loginInput"
+            />
             <input
               placeholder="Username"
               required
@@ -52,6 +75,13 @@ export default function Register() {
               ref={email}
               className="loginInput"
               type="email"
+            />
+            <input
+              placeholder="Mobile"
+              required
+              ref={mobile}
+              className="loginInput"
+              type="number"
             />
             <input
               placeholder="Password"
