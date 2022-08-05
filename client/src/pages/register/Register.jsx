@@ -3,6 +3,9 @@ import { useRef } from "react";
 import "./register.css";
 import { useHistory } from "react-router";
 
+// API call
+import GetRegionsAPI from "./GetAPI/GetRegionsAPI";
+
 export default function Register() {
   const username = useRef();
   const email = useRef();
@@ -40,6 +43,7 @@ export default function Register() {
         </div>
         <div className="loginRight">
           <form className="loginBox" onSubmit={handleClick}>
+            <GetRegionsAPI />
             <input
               placeholder="Username"
               required
