@@ -17,6 +17,7 @@ export default function Register() {
   const mobile = useRef();
   const password = useRef();
   const passwordAgain = useRef();
+  const houseStreetNumber = useRef();
   const history = useHistory();
 
   const handleClick = async (e) => {
@@ -51,7 +52,6 @@ export default function Register() {
         {/* <GetRegionsAPI/> */}
         <div className="loginRight">
           <form className="loginBox" onSubmit={handleClick}>
-            <GetRegionsAPI />
             <input
               placeholder="First Name"
               required
@@ -103,6 +103,15 @@ export default function Register() {
               ref={passwordAgain}
               className="loginInput"
               type="password"
+            />
+              <h4 className="addressInput"> Address :  </h4>
+            <GetRegionsAPI className="regionDropdown" />
+            <input
+              placeholder="House and Street Number"
+              required
+              ref={houseStreetNumber}
+              className="loginInput"
+              type="text"
             />
             <button className="loginButton" type="submit">
               Sign Up
