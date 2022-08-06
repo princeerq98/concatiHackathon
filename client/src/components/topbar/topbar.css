@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,200;1,100&display=swap');
 .topbarContainer {
   height: 50px;
   width: 100%;
-  background-color: #1877f2;
+  background-color: #000137;
   display: flex;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 999;
+  font-family: 'Poppins', sans-serif;
 }
 
 .topbarLeft {

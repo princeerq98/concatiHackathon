@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef } from "react";
 import "./register.css";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 // API call
 import GetRegionsAPI from "./GetAPI/GetRegionsAPI";
@@ -106,7 +107,9 @@ export default function Register() {
             <button className="loginButton" type="submit">
               Sign Up
             </button>
+            <Link to="/login" className="loginRegisterButton">
             <button className="loginRegisterButton">Log into Account</button>
+            </Link>
           </form>
         </div>
       </div>
